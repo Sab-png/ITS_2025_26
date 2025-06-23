@@ -1,18 +1,14 @@
-// Library Database Setup Script
-// Run with: mongosh librarySetup.js
-
-// Clear existing database if it exists
 db = db.getSiblingDB('library');
 db.dropDatabase();
 
 print('Creating library database...');
 
-// Create collections
+
 db.createCollection('books');
 db.createCollection('members');
 db.createCollection('loans');
 
-// Create standard indexes first
+
 db.books.createIndex({ "isbn": 1 }, { unique: true });
 db.books.createIndex({ "genre": 1 });
 db.books.createIndex({ "copies.status": 1 });
@@ -21,8 +17,7 @@ db.members.createIndex({ "email": 1 }, { unique: true });
 db.loans.createIndex({ "bookId": 1, "returnDate": 1 });
 db.loans.createIndex({ "memberId": 1, "status": 1 });
 
-// Create text index (only one per collection allowed)
-// We'll create a comprehensive one that includes all searchable fields
+
 db.books.createIndex(
   { 
     "title": "text",
@@ -41,7 +36,6 @@ db.books.createIndex(
 
 print('Indexes created successfully.');
 
-// Insert sample data
 const author1 = {
   authorId: new ObjectId(),
   name: "George Orwell",
@@ -128,7 +122,7 @@ const book3 = {
 
 db.books.insertMany([book1, book2, book3]);
 
-// Insert members
+
 const member1 = {
   _id: new ObjectId(),
   memberId: "M1001",
@@ -163,7 +157,6 @@ const member2 = {
 
 db.members.insertMany([member1, member2]);
 
-// Insert loans
 const loan1 = {
   _id: new ObjectId(),
   bookId: book2._id,
@@ -190,7 +183,6 @@ db.loans.insertMany([loan1, loan2]);
 
 print('Sample data inserted successfully.');
 
-// Verification queries
 print("\nDatabase stats:");
 printjson(db.stats());
 
