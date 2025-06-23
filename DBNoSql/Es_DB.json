@@ -1,0 +1,83 @@
+{
+  "books": [
+    {
+      "isbn": "978-88-06-12345-6",
+      "title": "Il nome della rosa",
+      "authors": [
+        {
+          "name": "Umberto Eco",
+          "birth_year": 1932,
+          "nationality": "italiana"
+        }
+      ],
+      "publisher": "Bompiani",
+      "publication_year": 2019,
+      "edition": "Prima edizione",
+      "pages": 503,
+      "language": "it",
+      "genres": [
+        "Fiction",
+        "Mystery",
+        "Historical"
+      ],
+      "description": "Romanzo ambientato in un'abbazia medievale del XIV secolo, dove il frate francescano Guglielmo da Baskerville indaga su una serie di misteriosi omicidi.",
+      "location": {
+        "shelf": "A",
+        "section": "Fiction",
+        "position": "A-12-3"
+      },
+      "copies": [
+        {
+          "copy_id": "COPY_001",
+          "condition": "good",
+          "acquisition_date": "2023-01-15T00:00:00.000Z",
+          "status": "available",
+          "notes": "Copia in buone condizioni"
+        },
+        {
+          "copy_id": "COPY_002",
+          "condition": "excellent",
+          "acquisition_date": "2023-01-15T00:00:00.000Z",
+          "status": "borrowed",
+          "notes": "Copia nuova"
+        }
+      ],
+      "metadata": {
+        "created_at": "2023-01-15T10:30:00.000Z",
+        "updated_at": "2023-06-20T14:25:00.000Z",
+        "created_by": "admin"
+      }
+    }
+  ],
+  "loans": [
+    {
+      "loan_id": "LOAN_2023_003",
+      "user_id": "USR_11111",
+      "book_info": {
+        "book_id": "ObjectId_placeholder_2",
+        "isbn": "978-88-04-66789-2",
+        "title": "Cien años de soledad",
+        "authors": [
+          "Gabriel García Márquez"
+        ],
+        "copy_id": "COPY_003"
+      },
+      "dates": {
+        "loan_date": "2023-04-10T11:20:00.000Z",
+        "due_date": "2023-04-24T23:59:59.000Z",
+        "return_date": "2023-04-22T16:45:00.000Z",
+        "last_renewal": null
+      },
+      "status": "returned",
+      "renewals": 0,
+      "max_renewals": 2,
+      "fine_amount": 0,
+      "notes": "Restituito in anticipo",
+      "staff_id": "STAFF_001",
+      "metadata": {
+        "created_at": "2023-04-10T11:20:00.000Z",
+        "updated_at": "2023-04-22T16:45:00.000Z"
+      }
+    }
+  ]
+}
