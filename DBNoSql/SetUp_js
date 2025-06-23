@@ -400,7 +400,6 @@ async function testConnection() {
   } catch (error) {
     console.error('Connessione fallita:', error.message);
     console.log(' Assicurati che MongoDB sia in esecuzione:');
-    console.log('   docker-compose up -d');
   } finally {
     await client.close();
   }
